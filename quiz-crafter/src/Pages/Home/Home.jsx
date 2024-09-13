@@ -15,7 +15,7 @@ const Home = () => {
     const [result, setResult] = useState([]);
     const [loading, setLoading] = useState(false);
     const targetElementRef = useRef(null);
-    const genAI = new GoogleGenerativeAI(process.env.GEMINI_API);
+    const genAI = new GoogleGenerativeAI(process.env.NEXT_PUBLIC_GEMINI_API);
 
     const getResponseForGivenPrompt = async () => {
         try {
