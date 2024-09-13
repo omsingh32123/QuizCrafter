@@ -1,0 +1,56 @@
+/* Container styling for the ButtonWrapper component */
+.button-wrapper {
+  display: flex;
+  margin-top: 30px;
+  height: 8vh;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px; /* px-4 */
+}
+
+/* Styling for the SpotlightButton component */
+.spotlight-button {
+  /* border: solid 2px white; */
+  border: none;
+  position: relative;
+  width: 100%;
+  height: 8vh;
+  max-width: 20rem; /* max-w-xs */
+  overflow: hidden;
+  border-radius: 20px; /* rounded-lg */
+  background-color: rgb(30, 30, 30);
+  padding: 0.75rem 1rem; /* px-4 py-3 */
+  font-size: 1.125rem; /* text-lg */
+  font-weight: 500; /* font-medium */
+  color: #ffffff; /* text-white */
+  cursor: pointer;
+  outline: none;
+  transition: transform 0.2s ease;
+}
+
+.spotlight-button:active {
+  transform: scale(0.985);
+}
+
+/* Styling for the text span */
+.spotlight-button-text {
+  position: relative;
+  z-index: 10;
+  mix-blend-mode: difference; /* mix-blend-difference */
+  pointer-events: none;
+}
+
+/* Styling for the animated highlight span */
+.spotlight-highlight {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 8rem; /* h-32 */
+  width: 8rem; /* w-32 */
+  transform: translate(-50%, -50%); /* translate-x-[50%] translate-y-[50%] */
+  border-radius: 50%; /* rounded-full */
+  background-color: #f8fafc; /* Slate-100 */
+  pointer-events: none;
+  transition: left 0.25s ease; /* For animation */
+}

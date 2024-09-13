@@ -1,0 +1,322 @@
+html, body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden; /* Hide default scrollbars */
+  }
+  
+  .scroll-container {
+    height: 100vh;
+    overflow-y: auto; /* Allow scrolling */
+    scroll-snap-type: y mandatory; /* Snap to sections vertically */
+    scroll-behavior: smooth; /* Smooth scrolling */
+  }
+  
+  .home-container-1, .home-container-2 {
+    height: 100vh; /* Full viewport height for each section */
+    scroll-snap-align: start; /* Snap to the start of each section */
+  }
+  
+  .home-container-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-color: black; 
+  }
+  .home-container-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-color: black; 
+  }
+  
+  .home-text {
+    font-family: "Arial", sans-serif;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    line-height: 1.2;
+    letter-spacing: 0.1em;
+  }
+  
+  .home-word-l2 {
+    width: 100%;
+    animation: zoomInFade 3s ease-in-out forwards;
+    font-size: 3vw;
+    display: block;
+    color: #fff;
+    text-transform: uppercase;
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.548),
+      rgba(255, 255, 255, 0.7)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .home-word-l {
+    width: 100%;
+    animation: zoomInFade 3s ease-in-out forwards;
+    font-size: 5vw;
+    display: block;
+    color: #fff;
+    text-transform: uppercase;
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.7)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .home-word-r {
+    animation: zoomOutFade 3s ease-in-out forwards;
+    font-size: 7vw;
+    display: block;
+    color: #fff;
+    text-transform: uppercase;
+    background: linear-gradient(
+      to left,
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.7)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .arrow-down {
+    margin-top: 40px;
+    width: 0; /* Zero width to form the triangle shape */
+    height: 0; /* Zero height to form the triangle shape */
+    border-left: 20px solid transparent; /* Creates the left side of the triangle */
+    border-right: 20px solid transparent; /* Creates the right side of the triangle */
+    border-top: 30px solid white; /* Creates the triangle pointing down */
+    background: transparent; /* No background color needed */
+    
+    opacity: 0; /* Initially hidden */
+    animation: fadeIn 1s ease forwards 3s, bounce 2s infinite 3s; /* Fade in after 3 seconds, then bounce */
+  }
+
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+    overflow: hidden;
+  }
+  .input-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 98%;
+  }
+  
+  /* Styled Input */
+  .styled-input {
+    height: 8vh;
+    width: 94%;
+    padding: 10px 2%;
+    font-size: 3vh;
+    border: none;
+    outline: none;
+    background-color: #1e1e1e;
+    color: white;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards 1s;
+    background: rgb(43, 43, 43);
+  }
+  .spacer{
+    width: 10px;
+  }
+  .inner-styled-input {
+    height: 8vh;
+    width: 47%;
+    padding: 10px 20px;
+    font-size: 3vh;
+    border: none;
+    outline: none;
+    background-color: #1e1e1e;
+    color: white;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    opacity: 0;
+    animation: fadeInButton 1s ease forwards 1.6s;
+    background: rgb(43, 43, 43);
+  }
+  
+  .styled-input::placeholder {
+    color: rgba(228, 228, 228, 0.7);
+  }
+  .inner-styled-input::placeholder {
+    color: rgba(228, 228, 228, 0.7);
+  }
+
+  .button-class{
+    width: 100%;
+  }
+  
+  /* Styled Button */
+  .styled-button {
+    
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+
+
+    height: 8vh;
+    width: 40%;
+    padding: 10px 20px;
+    font-size: 3vh;
+    border: solid 2px rgb(66, 66, 66);
+    margin: 20px 0 0 0;
+    background-color: rgb(135, 135, 135);
+    color: white;
+    cursor: pointer;
+    border-radius: 20px;
+    background: rgb(66, 66, 66);
+    opacity: 0;
+    animation: fadeIn 1s ease forwards 1s;
+  }
+
+  .result-div{
+    width: 90%;
+    border: solid 2px grey;
+    padding: 20px 40px;
+    border-radius: 25px;
+    background: #1e1e1e;
+    color: white;
+    margin-bottom: 30px;
+  }
+  .result-text{
+    font-size: 2.5vh;
+    color: white;
+  }
+  .show-ans-button{
+    height: 2.4rem;
+    width: 10rem;
+    border-radius: 10px;
+    background: rgb(66, 66, 66);
+    border: solid 2px rgb(165, 165, 165);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  .questions-outer-block{
+    width: 80%;
+    display: flex;
+    height: 80vh;
+    border-radius: 20px;
+    border: solid 2px white;
+    flex-direction: column;
+    padding: 30px 30px 0px 30px;
+    align-items: center;
+    overflow-y: auto;
+  }
+  .questions-outer-block::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+    height: 95%;
+  }
+  .loader{
+    margin: auto;
+  }
+  
+  /* Handle */
+  .questions-outer-block::-webkit-scrollbar-thumb {
+    background-color: #888; /* Color of the scrollbar handle */
+    border-radius: 10px; /* Rounded corners of the scrollbar handle */
+  }
+  
+  /* Handle on hover */
+  .questions-outer-block::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Darker color when hovered */
+  }
+  
+  /* Track (part where the scrollbar is not) */
+  .questions-outer-block::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Background color of the track */
+    border-radius: 10px; /* Rounded corners of the track */
+  }
+
+  @keyframes fadeInButton {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Fade-in effect */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  /* Arrow bounce animation */
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-10px);
+    }
+    60% {
+      transform: translateY(-5px);
+    }
+  }
+  
+  
+
+  @keyframes zoomInFade {
+    0% {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  @keyframes zoomOutFade {
+    0% {
+      opacity: 0;
+      transform: scale(1.5);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  
+  .inner-styled-input::-webkit-outer-spin-button,
+.inner-styled-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.inner-styled-input[type=number] {
+  -moz-appearance: textfield;
+}
